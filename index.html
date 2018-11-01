@@ -9,6 +9,8 @@
         const canvas = document.getElementById("snake-canvas");
         const context = canvas.getContext('2d');
 
+        const delta = {x: 1, y: 0};
+
         const snake = [
             {x: 3, y: 2},
             {x: 3, y: 6},
@@ -54,6 +56,6 @@
 
         draw();
 
-        setInterval(moveSnake, 1000, {x: 1, y: 0});
+        setInterval(moveSnake, 1000, delta);
     </script>
 </html>
