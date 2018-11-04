@@ -13,8 +13,8 @@
 
 
         context.fillStyle = 'white';
-        context.fillRect(0, 40, canvas.width, 1);
-        context.fillRect(0, 80, canvas.width, 1);
-        context.fillRect(0, 120, canvas.width, 1);
+        for (let y = 40; y < canvas.height; y += 40) {
+            context.fillRect(0, y, canvas.width, 1);
+        }
     </script>
 </html>
