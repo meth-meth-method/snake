@@ -9,6 +9,8 @@
         const canvas = document.getElementById("snake-canvas");
         const context = canvas.getContext('2d');
 
+        const size = 40;
+
         const delta = {x: 1, y: 0};
 
         const apple = {x: 3, y: 5};
@@ -30,17 +32,17 @@
         function draw() {
             context.fillStyle = 'black';
             context.fillRect(0, 0, canvas.width, canvas.height);
-            drawGrid(40);
-            drawSnake(snake, 40);
-            drawApple(apple, 40);
+            drawGrid();
+            drawSnake(snake);
+            drawApple(apple);
         }
 
-        function drawApple(apple, size) {
+        function drawApple(apple) {
             context.fillStyle = 'red';
             context.fillRect(apple.x * size - 10, apple.y * size - 10, 20, 20);
         }
 
-        function drawGrid(size) {
+        function drawGrid() {
             context.fillStyle = 'white';
             for (let y = size; y < canvas.height; y += size) {
                 context.fillRect(0, y, canvas.width, 1);
@@ -50,7 +52,7 @@
             }
         }
 
-        function drawSnake(snake, size) {
+        function drawSnake(snake) {
             context.beginPath();
             context.moveTo(snake[0].x * size, snake[0].y * size);
             for (let pos of snake) {
