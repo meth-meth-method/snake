@@ -70,7 +70,11 @@
         }
 
         function update() {
-            randomizeApple();
+            const head = snake[0];
+            if (head.x === apple.x && head.y === apple.y) {
+                randomizeApple();
+            }
+
             moveSnake(delta);
             draw();
         }
