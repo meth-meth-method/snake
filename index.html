@@ -57,5 +57,25 @@
         draw();
 
         setInterval(moveSnake, 1000, delta);
+
+        window.addEventListener("keydown", event => {
+            const code = event.code;
+            if (code === "ArrowRight") {
+                delta.x = 1;
+                delta.y = 0;
+            }
+            if (code === "ArrowLeft") {
+                delta.x = -1;
+                delta.y = 0;
+            }
+            if (code === "ArrowUp") {
+                delta.x = 0;
+                delta.y = -1;
+            }
+            if (code === "ArrowDown") {
+                delta.x = 0;
+                delta.y = 1;
+            }
+        });
     </script>
 </html>
