@@ -73,6 +73,10 @@
             const head = snake[0];
             if (head.x === apple.x && head.y === apple.y) {
                 randomizeApple();
+                snake.push({
+                    x: head.x,
+                    y: head.y,
+                });
             }
 
             moveSnake(delta);
