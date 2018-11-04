@@ -21,6 +21,11 @@
             {x: 6, y: 6},
         ];
 
+        function randomizeApple() {
+            apple.x = 9 * Math.random() | 0;
+            apple.y = 9 * Math.random() | 0;
+        }
+
         function moveSnake(delta) {
             const pos = snake.pop();
             pos.x = snake[0].x + delta.x;
@@ -64,6 +69,7 @@
             context.stroke();
         }
 
+        randomizeApple();
         draw();
 
         setInterval(moveSnake, 1000, delta);
