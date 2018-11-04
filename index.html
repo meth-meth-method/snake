@@ -69,10 +69,15 @@
             context.stroke();
         }
 
-        randomizeApple();
-        draw();
+        function update() {
+            randomizeApple();
+            moveSnake(delta);
+            draw();
+        }
 
-        setInterval(moveSnake, 1000, delta);
+        update();
+
+        setInterval(update, 1000);
 
         window.addEventListener("keydown", event => {
             const code = event.code;
