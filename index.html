@@ -11,16 +11,16 @@
 
         context.fillRect(0, 0, canvas.width, canvas.height);
 
-        function drawGrid() {
+        function drawGrid(size) {
             context.fillStyle = 'white';
-            for (let y = 40; y < canvas.height; y += 40) {
+            for (let y = size; y < canvas.height; y += size) {
                 context.fillRect(0, y, canvas.width, 1);
             }
-            for (let x = 40; x < canvas.width; x += 40) {
+            for (let x = size; x < canvas.width; x += size) {
                 context.fillRect(x, 0, 1, canvas.height);
             }
         }
 
-        drawGrid();
+        drawGrid(40);
     </script>
 </html>
