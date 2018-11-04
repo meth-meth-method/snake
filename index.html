@@ -28,17 +28,17 @@
             }
         }
 
-        function drawSnake(snake) {
+        function drawSnake(snake, size) {
             context.beginPath();
-            context.moveTo(snake[0].x, snake[0].y);
+            context.moveTo(snake[0].x * size, snake[0].y * size);
             for (let pos of snake) {
-                context.lineTo(pos.x, pos.y);
+                context.lineTo(pos.x * size, pos.y * size);
             }
             context.strokeStyle = 'green';
             context.stroke();
         }
 
         drawGrid(40);
-        drawSnake(snake);
+        drawSnake(snake, 40);
     </script>
 </html>
