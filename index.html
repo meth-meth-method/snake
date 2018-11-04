@@ -9,6 +9,13 @@
         const canvas = document.getElementById("snake-canvas");
         const context = canvas.getContext('2d');
 
+        const snake = [
+            {x: 3, y: 2},
+            {x: 3, y: 6},
+            {x: 6, y: 6},
+        ];
+
+
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         function drawGrid(size) {
