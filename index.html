@@ -15,6 +15,14 @@
             {x: 6, y: 6},
         ];
 
+        function moveSnake(delta) {
+            const pos = snake.pop();
+            pos.x = snake[0].x + delta.x;
+            pos.y = snake[0].y + delta.y;
+            snake.unshift(pos);
+            draw();
+        }
+
         function draw() {
             context.fillStyle = 'black';
             context.fillRect(0, 0, canvas.width, canvas.height);
