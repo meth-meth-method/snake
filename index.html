@@ -11,6 +11,8 @@
 
         const delta = {x: 1, y: 0};
 
+        const apple = {x: 3, y: 5};
+
         const snake = [
             {x: 3, y: 2},
             {x: 3, y: 6},
@@ -30,6 +32,12 @@
             context.fillRect(0, 0, canvas.width, canvas.height);
             drawGrid(40);
             drawSnake(snake, 40);
+            drawApple(apple, 40);
+        }
+
+        function drawApple(apple, size) {
+            context.fillStyle = 'red';
+            context.fillRect(apple.x * size, apple.y * size, 20, 20);
         }
 
         function drawGrid(size) {
